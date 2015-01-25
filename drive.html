@@ -21,6 +21,9 @@
        * @param {Object} authResult Authorization result.
        */
       function handleAuthResult(authResult) {
+        searchFile('mus.json', getFile);
+        
+        
         var authButton = document.getElementById('authorizeButton');
         var filePicker = document.getElementById('filePicker');
         authButton.style.display = 'none';
