@@ -5,17 +5,11 @@
       var CLIENT_ID = '532576963484-s109668ql6rlhj96dhsup5bouk0sca18.apps.googleusercontent.com';
       var SCOPES = 'https://www.googleapis.com/auth/drive.file';
 
-      /**
-       * Called when the client library is loaded to start the auth flow.
-       */
-      function handleClientLoad() {
+      function handleClientLoad() { // Called when the client library is loaded to start the auth flow.
         window.setTimeout(checkAuth, 1);
       }
 
-      /**
-       * Check if the current user has authorized the application.
-       */
-      function checkAuth() {
+      function checkAuth() { //  Check if the current user has authorized the application.
         gapi.auth.authorize(
             {'client_id': CLIENT_ID, 'scope': SCOPES, 'immediate': true},
             handleAuthResult);
@@ -46,11 +40,6 @@
         }
       }
 
-      /**
-       * Start the file upload.
-       *
-       * @param {Object} evt Arguments from the file selector.
-       */
       function uploadFile(evt) {
         gapi.client.load('drive', 'v2', function() {
           var file = evt.target.files[0];
